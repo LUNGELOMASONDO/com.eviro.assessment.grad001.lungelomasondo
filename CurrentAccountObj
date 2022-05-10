@@ -1,0 +1,19 @@
+public class CurrentAccountObj extends Account
+{
+    public BigDecimal overdraft;
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (o == this)
+            return true;
+
+        if(!(o instanceof CurrentAccountObj))
+            return false;
+
+        CurrentAccountObj c = (CurrentAccountObj) o;
+
+        return Integer.compare(super.id, c.id) == 0 
+                || Integer.compare(super.accountNum, c.accountNum) == 0;
+    }
+}
