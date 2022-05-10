@@ -1,15 +1,19 @@
-public class SavingsAccountObj
+import java.math.BigDecimal;
+
+public class CurrentAccountObj extends AccountObj
 {
+    public BigDecimal overdraft;
+
     @Override
     public boolean equals(Object o)
     {
         if (o == this)
             return true;
 
-        if(!(o instanceof SavingsAccountObj))
+        if(!(o instanceof CurrentAccountObj))
             return false;
 
-        SavingsAccountObj c = (SavingsAccountObj) o;
+        CurrentAccountObj c = (CurrentAccountObj) o;
 
         return Integer.compare(super.id, c.id) == 0 
                 || Integer.compare(super.accountNum, c.accountNum) == 0;
