@@ -12,6 +12,6 @@ public class SavingsAccountObj extends AccountObj
         SavingsAccountObj c = (SavingsAccountObj) o;
 
         return Integer.compare(super.id, c.id) == 0 
-                || Integer.compare(super.accountNum, c.accountNum) == 0;
+                || super.accountNum.equals(c.accountNum);
     }
 }
